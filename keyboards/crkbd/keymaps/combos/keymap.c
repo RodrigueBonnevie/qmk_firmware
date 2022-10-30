@@ -22,8 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   // Todo:
     // Two KC_MINS
     // Combos
-    // Scandinavian letters at top right on layer 2?
     // Sticky modifier keys
+    // Scandinavian letters at top right on layer 2?
     // Gaming layer?
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -43,11 +43,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_BSLS, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN,  KC_GRV,
+      KC_LCTL, KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, XXXXXXX,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LBRC, KC_RBRC, KC_PIPE, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,  KC_SPC, _______,     MO(3), KC_LSFT, KC_RALT
+                                          KC_LGUI,  KC_SPC, _______,     MO(3),  KC_LCTL, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX,    KC_1,    KC_2,    KC_3, KC_MINS,                      XXXXXXX, XXXXXXX, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI, KC_SPC,  MO(3),      _______,   KC_LSFT, KC_RALT
+                                          KC_LGUI, KC_SPC,  MO(3),      _______, KC_LSFT, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
