@@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     // Combos
     // Scandinavian letters at top right on layer 2?
     // Sticky modifier keys
+    // Gaming layer?
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
@@ -74,6 +75,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   )
 };
+
+// TODO: Keys that I need
+    // Escape
+    // Enter
+    // Tab
+    // Backspace
+    // Delete
+    // Alt?
+
+// Right hand
+const uint16_t PROGMEM combo_backspace[] = {KC_J, KC_K,          COMBO_END};
+const uint16_t PROGMEM combo_delete[]    = {KC_K, KC_L,          COMBO_END};
+const uint16_t PROGMEM combo_enter[]     = {KC_K, KC_L, KC_QUOT, COMBO_END};
+// Left hand
+const uint16_t PROGMEM combo_tab[]       = {KC_D, KC_F,          COMBO_END};
+const uint16_t PROGMEM combo_escape[]    = {KC_A, KC_S, KC_D,    COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(combo_backspace, KC_BSPC),
+    COMBO(combo_delete,    KC_DEL),
+    COMBO(combo_enter,     KC_ENT),
+    COMBO(combo_tab,       KC_TAB),
+    COMBO(combo_escape,    KC_ESC)
+};
+
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
