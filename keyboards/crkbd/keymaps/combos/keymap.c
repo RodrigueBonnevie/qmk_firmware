@@ -20,11 +20,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <stdio.h>
 
   // Todo:
-    // Two KC_MINS
     // Combos
-    // Sticky modifier keys
     // Scandinavian letters at top right on layer 2?
+    // Sticky modifier keys
     // Gaming layer?
+  // Minor Todos:
+    // Two KC_MINS
+    // Clean up the controls and modifiers that are laying around as doubles
+    // Remove edge columns and inner thumbs
 
 enum custom_keycodes{
     WIN_OH,
@@ -54,17 +57,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_BSLS, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT,  KC_TAB,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN,  KC_GRV,
+      KC_LCTL, KC_LSFT, KC_LGUI, KC_LALT,  KC_TAB, KC_LCTL,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LBRC, KC_RBRC, KC_PIPE, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,  KC_SPC, _______,     MO(3),  KC_LCTL, KC_RALT
+                                          KC_LGUI,  KC_SPC, _______,     MO(3),  KC_LSFT, KC_RALT
                                       //`--------------------------'  `--------------------------'
   ),
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB, XXXXXXX,    KC_7,    KC_8,    KC_9, KC_PLUS,                      XXXXXXX,  WIN_OH,  WIN_EH, WIN_EUH, XXXXXXX, XXXXXXX,
+       KC_TAB, XXXXXXX,    KC_7,    KC_8,    KC_9, KC_PLUS,                      XXXXXXX,  WIN_EH,  WIN_OH, WIN_EUH, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL, XXXXXXX,    KC_4,    KC_5,    KC_6,  KC_EQL,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -89,19 +92,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 // Right hand
-const uint16_t PROGMEM combo_backspace[] = {KC_J, KC_K,          COMBO_END};
-const uint16_t PROGMEM combo_delete[]    = {KC_K, KC_L,          COMBO_END};
-const uint16_t PROGMEM combo_enter[]     = {KC_K, KC_L, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM combo_backspace[]  = {KC_J, KC_K,       COMBO_END};
+const uint16_t PROGMEM combo_delete[]     = {KC_K, KC_L,       COMBO_END};
+const uint16_t PROGMEM combo_right_ctrl[] = {KC_J, KC_L,       COMBO_END};
+const uint16_t PROGMEM combo_enter[]      = {KC_J, KC_K, KC_L, COMBO_END};
 // Left hand
-const uint16_t PROGMEM combo_tab[]       = {KC_D, KC_F,          COMBO_END};
-const uint16_t PROGMEM combo_escape[]    = {KC_A, KC_S, KC_D,    COMBO_END};
+const uint16_t PROGMEM combo_tab[]        = {KC_D, KC_F,       COMBO_END};
+const uint16_t PROGMEM combo_escape[]     = {KC_S, KC_D,       COMBO_END};
+const uint16_t PROGMEM combo_left_ctrl[]  = {KC_S, KC_F,       COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-COMBO(combo_backspace, KC_BSPC),
-COMBO(combo_delete,    KC_DEL),
-COMBO(combo_enter,     KC_ENT),
-COMBO(combo_tab,       KC_TAB),
-COMBO(combo_escape,    KC_ESC)
+COMBO(combo_backspace,  KC_BSPC),
+COMBO(combo_delete,     KC_DEL),
+COMBO(combo_enter,      KC_ENT),
+COMBO(combo_right_ctrl, KC_RCTL),
+COMBO(combo_tab,        KC_TAB),
+COMBO(combo_escape,     KC_ESC),
+COMBO(combo_left_ctrl,  KC_LCTL)
 };
 
 void tap_key(uint16_t keycode) {
