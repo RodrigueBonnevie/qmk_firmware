@@ -26,6 +26,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     // Scandinavian letters at top right on layer 2?
     // Gaming layer?
 
+enum custom_keycodes{
+    WIN_OH,
+    WIN_EH,
+    WIN_EUH
+};
+
+// Is this needed?
+//void matrix_init_user(void) {
+    //set_unicode_input_mode(UC_WIN);
+//};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -43,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_BSLS, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT, XXXXXXX,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN,  KC_GRV,
+      KC_LCTL, KC_LSFT, KC_LCTL, KC_LGUI, KC_LALT,  KC_TAB,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN,  KC_GRV,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LBRC, KC_RBRC, KC_PIPE, KC_TILD,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -53,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB, XXXXXXX,    KC_7,    KC_8,    KC_9, KC_PLUS,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_TAB, XXXXXXX,    KC_7,    KC_8,    KC_9, KC_PLUS,                      XXXXXXX,  WIN_OH,  WIN_EH, WIN_EUH, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL, XXXXXXX,    KC_4,    KC_5,    KC_6,  KC_EQL,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -76,13 +87,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-// TODO: Keys that I need
-    // Escape
-    // Enter
-    // Tab
-    // Backspace
-    // Delete
-    // Alt?
 
 // Right hand
 const uint16_t PROGMEM combo_backspace[] = {KC_J, KC_K,          COMBO_END};
@@ -93,12 +97,65 @@ const uint16_t PROGMEM combo_tab[]       = {KC_D, KC_F,          COMBO_END};
 const uint16_t PROGMEM combo_escape[]    = {KC_A, KC_S, KC_D,    COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo_backspace, KC_BSPC),
-    COMBO(combo_delete,    KC_DEL),
-    COMBO(combo_enter,     KC_ENT),
-    COMBO(combo_tab,       KC_TAB),
-    COMBO(combo_escape,    KC_ESC)
+COMBO(combo_backspace, KC_BSPC),
+COMBO(combo_delete,    KC_DEL),
+COMBO(combo_enter,     KC_ENT),
+COMBO(combo_tab,       KC_TAB),
+COMBO(combo_escape,    KC_ESC)
 };
+
+void tap_key(uint16_t keycode) {
+  register_code(keycode);
+  unregister_code(keycode);
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch(keycode) {
+    case WIN_OH: // å and Å
+      if (record->event.pressed) {
+        uint8_t temp_mod = get_mods();
+        clear_mods();
+        register_code(KC_LALT);
+        if (temp_mod & MODS_SHIFT_MASK) {
+          tap_key(KC_1); tap_key(KC_4); tap_key(KC_3); // Å
+        } else {
+          tap_key(KC_1); tap_key(KC_3); tap_key(KC_4); // å
+        }
+        unregister_code(KC_LALT);
+        return false;
+      }
+      break;
+    case WIN_EH: // ä and Ä
+      if (record->event.pressed) {
+        uint8_t temp_mod = get_mods();
+        clear_mods();
+        register_code(KC_LALT);
+        if (temp_mod & MODS_SHIFT_MASK) {
+          tap_key(KC_1); tap_key(KC_4); tap_key(KC_2); // Ä
+        } else {
+          tap_key(KC_1); tap_key(KC_3); tap_key(KC_2); // ä
+        }
+        unregister_code(KC_LALT);
+        return false;
+      }
+      break;
+    case WIN_EUH: // ö and Ö
+      if (record->event.pressed) {
+        uint8_t temp_mod = get_mods();
+        clear_mods();
+        register_code(KC_LALT);
+        if (temp_mod & MODS_SHIFT_MASK) {
+          tap_key(KC_1); tap_key(KC_5); tap_key(KC_3); // Ö
+        } else {
+          tap_key(KC_1); tap_key(KC_4); tap_key(KC_8); // ö
+        }
+        unregister_code(KC_LALT);
+        return false;
+      }
+      break;
+  }
+  return true;
+}
 
 
 #ifdef OLED_ENABLE
