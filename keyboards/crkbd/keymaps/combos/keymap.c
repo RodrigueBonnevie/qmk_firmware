@@ -31,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     // Remove edge columns and inner thumbs
 
 enum custom_keycodes{
-    WIN_OH,
+    WIN_OH = SAFE_RANGE,
     WIN_EH,
     WIN_EUH
 };
@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9, KC_PLUS,                         KC_Y,  WIN_EH,  WIN_OH, WIN_EUH, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,    KC_7,    KC_8,    KC_9, KC_PLUS,                      XXXXXXX,  WIN_OH,  WIN_EH, WIN_EUH, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX,    KC_4,    KC_5,    KC_6,  KC_EQL,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -95,21 +95,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Right hand
 const uint16_t PROGMEM combo_backspace[]  = {KC_J, KC_K,       COMBO_END};
 const uint16_t PROGMEM combo_delete[]     = {KC_K, KC_L,       COMBO_END};
+const uint16_t PROGMEM combo_right_gui[]  = {KC_U, KC_O,       COMBO_END};
 const uint16_t PROGMEM combo_right_ctrl[] = {KC_J, KC_L,       COMBO_END};
+const uint16_t PROGMEM combo_right_alt[]  = {KC_M, KC_DOT,     COMBO_END};
 const uint16_t PROGMEM combo_enter[]      = {KC_J, KC_K, KC_L, COMBO_END};
 // Left hand
 const uint16_t PROGMEM combo_tab[]        = {KC_D, KC_F,       COMBO_END};
 const uint16_t PROGMEM combo_escape[]     = {KC_S, KC_D,       COMBO_END};
+const uint16_t PROGMEM combo_left_gui[]   = {KC_W, KC_R,       COMBO_END};
 const uint16_t PROGMEM combo_left_ctrl[]  = {KC_S, KC_F,       COMBO_END};
+const uint16_t PROGMEM combo_left_alt[]   = {KC_X, KC_V,       COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
 COMBO(combo_backspace,  KC_BSPC),
 COMBO(combo_delete,     KC_DEL),
 COMBO(combo_enter,      KC_ENT),
+COMBO(combo_right_gui,  KC_RGUI),
 COMBO(combo_right_ctrl, KC_RCTL),
+COMBO(combo_right_alt,  KC_RALT),
 COMBO(combo_tab,        KC_TAB),
 COMBO(combo_escape,     KC_ESC),
-COMBO(combo_left_ctrl,  KC_LCTL)
+COMBO(combo_left_gui,   KC_LGUI),
+COMBO(combo_left_ctrl,  KC_LCTL),
+COMBO(combo_left_alt,   KC_LALT)
 };
 
 void tap_key(uint16_t keycode) {
