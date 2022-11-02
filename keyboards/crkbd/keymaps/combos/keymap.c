@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          TG(5),  KC_SPC,   MO(1),      MO(2), KC_LSFT, XXXXXXX
+                                          XXXXXXX,   MO(1),  KC_SPC,    KC_LSFT,   MO(2), XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -60,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT,  KC_TAB, KC_LCTL,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,                      KC_UNDS, KC_PLUS, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,                      KC_UNDS, KC_COLN, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,  KC_SPC, _______,      MO(3), KC_LSFT, XXXXXXX
+                                          XXXXXXX, _______,  KC_SPC,    KC_LSFT,   MO(3), XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3,    KC_0,                       KC_DEL, KC_BSPC, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, KC_SPC,    MO(3),    _______, KC_LSFT, XXXXXXX
+                                          XXXXXXX,   MO(3),  KC_SPC,    KC_LSFT, _______, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   TG(5),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, KC_SPC,  _______,    _______, KC_LSFT, XXXXXXX
+                                          XXXXXXX, _______,  KC_SPC,    KC_LSFT, _______, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, KC_SPC,  _______,    _______, KC_LSFT, XXXXXXX
+                                          XXXXXXX,   MO(1),  KC_SPC,    KC_LSFT,   MO(2), XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -109,9 +109,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_QUOT, KC_SCLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,   TG(5),
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,  KC_SPC,   MO(2),      TG(1), KC_LSFT, XXXXXXX
+                                          XXXXXXX,  KC_SPC, XXXXXXX,      TG(5), KC_LSFT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   )
 };
