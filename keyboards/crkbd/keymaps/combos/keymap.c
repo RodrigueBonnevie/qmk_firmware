@@ -166,9 +166,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         clear_mods();
         register_code(KC_LALT);
         if (temp_mod & MODS_SHIFT_MASK) {
-          tap_key(KC_1); tap_key(KC_4); tap_key(KC_3); // Å
+          tap_key(KC_P1); tap_key(KC_P4); tap_key(KC_P3); // Å
         } else {
-          tap_key(KC_1); tap_key(KC_3); tap_key(KC_4); // å
+          tap_key(KC_P1); tap_key(KC_P3); tap_key(KC_P4); // å
         }
         unregister_code(KC_LALT);
         return false;
@@ -180,9 +180,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         clear_mods();
         register_code(KC_LALT);
         if (temp_mod & MODS_SHIFT_MASK) {
-          tap_key(KC_1); tap_key(KC_4); tap_key(KC_2); // Ä
+          tap_key(KC_P1); tap_key(KC_P4); tap_key(KC_P2); // Ä
         } else {
-          tap_key(KC_1); tap_key(KC_3); tap_key(KC_2); // ä
+          tap_key(KC_P1); tap_key(KC_P3); tap_key(KC_P2); // ä
         }
         unregister_code(KC_LALT);
         return false;
@@ -194,9 +194,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         clear_mods();
         register_code(KC_LALT);
         if (temp_mod & MODS_SHIFT_MASK) {
-          tap_key(KC_1); tap_key(KC_5); tap_key(KC_3); // Ö
+          tap_key(KC_P1); tap_key(KC_P5); tap_key(KC_P3); // Ö
         } else {
-          tap_key(KC_1); tap_key(KC_4); tap_key(KC_8); // ö
+          tap_key(KC_P1); tap_key(KC_P4); tap_key(KC_P8); // ö
         }
         unregister_code(KC_LALT);
         return false;
