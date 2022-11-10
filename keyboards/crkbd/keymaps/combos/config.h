@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define COMBO_COUNT 3
+#define COMBO_COUNT 4
 #define MODS_SHIFT_MASK (MOD_BIT(KC_LSHIFT)|MOD_BIT(KC_RSHIFT)) 
 
 //#define TAPPING_FORCE_HOLD
