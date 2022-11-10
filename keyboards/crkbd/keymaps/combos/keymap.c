@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_LPRN, KC_RPRN, KC_BSLS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT,  KC_TAB, KC_LCTL,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN, XXXXXXX,
+      XXXXXXX, KC_LGUI, KC_LCTL, KC_LALT,  KC_TAB, KC_LSFT,                      KC_MINS, KC_ASTR, KC_LCBR, KC_RCBR, KC_SCLN, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_TILD,                      KC_UNDS, KC_COLN, KC_LBRC, KC_RBRC, KC_PIPE, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -80,11 +80,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [3] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, KC_RGUI, KC_RCTL, KC_RALT,  KC_TAB, KC_RSFT,                      KC_RSFT,  KC_TAB, KC_RALT, KC_RCTL, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, KC_LSFT, KC_LGUI, KC_LALT,  KC_TAB, KC_LCTL,                      KC_RCTL,  KC_TAB, KC_RALT, KC_RGUI, KC_RSFT, XXXXXXX,
+      XXXXXXX, KC_LGUI, KC_LCTL, KC_LALT,  KC_TAB, KC_LSFT,                      KC_LSFT,  KC_TAB, KC_LALT, KC_LCTL, KC_LGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   TG(5),
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        MO(4), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   DF(5),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX,  KC_SPC, _______,    _______, KC_LSFT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -109,48 +109,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_QUOT, KC_SCLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
+      KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,   DF(0),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,  KC_SPC, XXXXXXX,      TG(5), KC_LSFT, XXXXXXX
+                                          XXXXXXX,  KC_SPC,   MO(2),    XXXXXXX, KC_LSFT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   )
 };
 
 
-// Left hand
-const uint16_t PROGMEM combo_tab[]                  = {KC_D, KC_F,       COMBO_END};
-const uint16_t PROGMEM combo_escape[]               = {KC_C, KC_V,       COMBO_END};
-const uint16_t PROGMEM combo_left_gui_left_hand[]   = {KC_W, KC_R,       COMBO_END};
-const uint16_t PROGMEM combo_left_ctrl_left_hand[]  = {KC_S, KC_F,       COMBO_END};
-const uint16_t PROGMEM combo_left_alt_left_hand[]   = {KC_X, KC_V,       COMBO_END};
-const uint16_t PROGMEM combo_right_gui_left_hand[]  = {KC_Q, KC_W, KC_R, COMBO_END};
-const uint16_t PROGMEM combo_right_ctrl_left_hand[] = {KC_A, KC_S, KC_F, COMBO_END};
-const uint16_t PROGMEM combo_right_alt_left_hand[]  = {KC_Z, KC_X, KC_V, COMBO_END};
-// Right hand
-const uint16_t PROGMEM combo_enter[]                 = {KC_J, KC_K, KC_L,      COMBO_END};
-const uint16_t PROGMEM combo_left_gui_right_hand[]   = {KC_U, KC_O,            COMBO_END};
-const uint16_t PROGMEM combo_left_ctrl_right_hand[]  = {KC_J, KC_L,            COMBO_END};
-const uint16_t PROGMEM combo_left_alt_right_hand[]   = {KC_M, KC_DOT,          COMBO_END};
-const uint16_t PROGMEM combo_right_gui_right_hand[]  = {KC_U, KC_O, KC_P,      COMBO_END};
-const uint16_t PROGMEM combo_right_ctrl_right_hand[] = {KC_J, KC_L, KC_QUOT,   COMBO_END};
-const uint16_t PROGMEM combo_right_alt_right_hand[]  = {KC_M, KC_DOT, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM combo_escape[]     = {KC_W, KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM combo_enter[]      = {KC_J, KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM combo_backspace[]  = {KC_U, KC_I, KC_O, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-COMBO(combo_tab,                   KC_TAB),
-COMBO(combo_escape,                KC_ESC),
-COMBO(combo_enter,                 KC_ENT),
-COMBO(combo_right_gui_right_hand,  KC_RGUI),
-COMBO(combo_right_ctrl_right_hand, KC_RCTL),
-COMBO(combo_right_alt_right_hand,  KC_RALT),
-COMBO(combo_right_gui_left_hand,   KC_RGUI),
-COMBO(combo_right_ctrl_left_hand,  KC_RCTL),
-COMBO(combo_right_alt_left_hand,   KC_RALT),
-COMBO(combo_left_gui_right_hand,   KC_LGUI),
-COMBO(combo_left_ctrl_right_hand,  KC_LCTL),
-COMBO(combo_left_alt_right_hand,   KC_LALT),
-COMBO(combo_left_gui_left_hand,    KC_LGUI),
-COMBO(combo_left_ctrl_left_hand,   KC_LCTL),
-COMBO(combo_left_alt_left_hand,    KC_LALT)
+  COMBO(combo_escape,     KC_ESC),
+  COMBO(combo_enter,      KC_ENT),
+  COMBO(combo_backspace,  KC_BSPC),
 };
 
 void tap_key(uint16_t keycode) {
