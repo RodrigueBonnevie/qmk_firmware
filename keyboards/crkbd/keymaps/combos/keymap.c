@@ -21,13 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <keymap_swedish.h>
 
 
-enum custom_keycodes{
-    WIN_OH = SAFE_RANGE,
-    WIN_EH,
-    WIN_EUH
-};
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -49,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SE_TILD,                      SE_UNDS, SE_RPRN, SE_RCBR, SE_RABK, SE_RBRC, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,  KC_SPC, _______,      MO(3), KC_LSFT, XXXXXXX
+                                          XXXXXXX,  KC_SPC, _______,      MO(3), KC_BSPC, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
