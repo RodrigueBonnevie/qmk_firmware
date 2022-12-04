@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX,    SE_7,    SE_8,    SE_9, SE_PLUS,                      XXXXXXX, SE_ARNG, SE_ADIA, SE_ODIA, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LSFT,  KC_TAB, KC_LALT, KC_LCTL, KC_LGUI, XXXXXXX,
+      XXXXXXX,    SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LSFT,  KC_TAB, KC_LALT, KC_LCTL, KC_LGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX,    SE_1,    SE_2,    SE_3,    SE_0,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -97,12 +97,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-const uint16_t PROGMEM combo_escape[]     = {SE_W, SE_E, SE_R,       COMBO_END};
-const uint16_t PROGMEM combo_enter[]      = {SE_J, SE_K, SE_L,       COMBO_END};
-const uint16_t PROGMEM combo_delete[]     = {SE_U, SE_I, SE_O, SE_P, COMBO_END};
+const uint16_t PROGMEM combo_escape[]        = {SE_W, SE_E,    SE_R,       COMBO_END};
+const uint16_t PROGMEM combo_enter[]         = {SE_J, SE_K,    SE_L,       COMBO_END};
+const uint16_t PROGMEM combo_delete[]        = {SE_U, SE_I,    SE_O, SE_P, COMBO_END};
+const uint16_t PROGMEM combo_backspace[]     = {SE_M, SE_COMM,             COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_escape,     KC_ESC),
   COMBO(combo_enter,      KC_ENT),
   COMBO(combo_delete,     KC_DEL),
+  COMBO(combo_backspace,  KC_BSPC),
 };
