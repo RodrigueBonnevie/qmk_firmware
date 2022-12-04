@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+---------+-------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SE_QUES, SE_TILD,                      SE_UNDS, SE_RPRN, SE_RCBR, SE_RBRC, SE_RABK, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,  KC_SPC, _______,      MO(4), KC_BSPC, XXXXXXX
+                                          XXXXXXX,  KC_SPC, _______,      MO(4), KC_LSFT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
