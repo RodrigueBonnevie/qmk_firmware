@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX,    SE_7,    SE_8,    SE_9, SE_PLUS,                      XXXXXXX, SE_ARNG, SE_ADIA, SE_ODIA, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LSFT,  KC_TAB, KC_LALT, KC_LCTL, KC_LGUI, XXXXXXX,
+      XXXXXXX,    SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LSFT, KC_BSPC, KC_LALT, KC_LCTL, KC_LGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX,    SE_1,    SE_2,    SE_3,    SE_0,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
