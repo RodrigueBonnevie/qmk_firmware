@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define USE_MATRIX_I2C
+// #define USE_MATRIX_I2C
 
 /* Select hand configuration */
 
@@ -28,8 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define COMBO_COUNT 4
-#define MODS_SHIFT_MASK (MOD_BIT(KC_LSHIFT)|MOD_BIT(KC_RSHIFT)) 
+#define COMBO_COUNT 3
+#define MODS_SHIFT_MASK (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT))
 
-//#define TAPPING_FORCE_HOLD
-//#define TAPPING_TERM 100
+// #define TAPPING_FORCE_HOLD
+// #define TAPPING_TERM 100

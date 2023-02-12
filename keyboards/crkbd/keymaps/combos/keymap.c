@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    SE_Z,    SE_X,    SE_C,    SE_V,    SE_B,                         SE_N,    SE_M, SE_COMM,  SE_DOT, SE_SLSH,   DF(0),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,  KC_SPC,   MO(3),    XXXXXXX, KC_LSFT, XXXXXXX
+                                          XXXXXXX,  KC_SPC,   MO(3),      MO(3), KC_LSFT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LSFT, KC_BSPC, KC_LALT, KC_LCTL, KC_LGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,    SE_1,    SE_2,    SE_3,    SE_0,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH, XXXXXXX,
+      XXXXXXX, XXXXXXX,    SE_1,    SE_2,    SE_3, XXXXXXX,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX,  KC_SPC,   MO(4),    _______, KC_LSFT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
@@ -88,23 +88,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_PSCR,   KC_F4,   KC_F5,   KC_F6,  KC_F11,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,  KC_SPC, XXXXXXX,    XXXXXXX, KC_LSFT, XXXXXXX
+                                          XXXXXXX,  KC_SPC, _______,    _______, KC_LSFT, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   )
 
 };
 
 
-const uint16_t PROGMEM combo_escape[]        = {SE_W, SE_E,    SE_R,       COMBO_END};
-const uint16_t PROGMEM combo_enter[]         = {SE_J, SE_K,    SE_L,       COMBO_END};
-const uint16_t PROGMEM combo_delete[]        = {SE_U, SE_I,    SE_O, SE_P, COMBO_END};
-const uint16_t PROGMEM combo_backspace[]     = {SE_M, SE_COMM,             COMBO_END};
+const uint16_t PROGMEM combo_escape[] = {SE_W, SE_E,    SE_R, COMBO_END};
+const uint16_t PROGMEM combo_enter[]  = {SE_J, SE_K,    SE_L, COMBO_END};
+const uint16_t PROGMEM combo_delete[] = {SE_M, SE_COMM,       COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_escape,     KC_ESC),
   COMBO(combo_enter,      KC_ENT),
   COMBO(combo_delete,     KC_DEL),
-  COMBO(combo_backspace,  KC_BSPC),
 };
