@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`-----------------'  `-----------------'
   ),
 
-  [GNUM] = LAYOUT(
+  [GNUM] = LAYOUT(  // Modified number layer for when gaming
   //,--------------------------------------------.                    ,--------------------------------------------.
       XXXXXXX,    SE_7,    SE_8,    SE_9,    SE_T,                      XXXXXXX, SE_ARNG, SE_ADIA, SE_ODIA, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
