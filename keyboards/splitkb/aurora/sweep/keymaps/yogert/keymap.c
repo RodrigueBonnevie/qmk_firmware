@@ -4,7 +4,7 @@
 
 enum ferris_layers {
   BASE,
-  PLAY, // For gaming
+  GAME, // For gaming
   NUM,
   SYM,
   NAV,
@@ -24,11 +24,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          SE_Z,    SE_X,    SE_C,    SE_V,    SE_B,                         SE_N,    SE_M, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                           KC_SPC, MO(SYM),    MO(NUM), KC_LSFT
+                                          MO(SYM),  KC_SPC,    KC_LSFT, MO(NUM)
                                       //`-----------------'  `-----------------'
   ),
 
-  [PLAY] = LAYOUT( // For gaming
+  [GAME] = LAYOUT( // For gaming
   //,--------------------------------------------.                    ,--------------------------------------------.
       KC_TAB,     SE_Q,    SE_W,    SE_E,    SE_R,                         SE_Y,    SE_U,    SE_I,    SE_O,    SE_P,
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
       KC_LSFT,    SE_Z,    SE_X,    SE_C,    SE_V,                         SE_N,    SE_M, SE_COMM,  SE_DOT,DF(BASE),
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                           KC_SPC,MO(GNUM),  MO(GNUM), KC_LSFT 
+                                         MO(GNUM),  KC_SPC,    KC_LSFT, MO(GNUM)
                                       //`-----------------'  `-----------------'
   ),
 
@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+---------+-------|
       XXXXXXX, XXXXXXX, XXXXXXX, SE_QUES, SE_TILD,                      SE_UNDS, SE_RPRN, SE_RCBR, SE_RBRC, SE_RABK,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                           KC_SPC, _______,    MO(NAV), KC_LSFT 
+                                          _______,  KC_SPC,    KC_LSFT, MO(NAV)
                                       //`-----------------'  `-----------------'
   ),
 
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX,    SE_1,    SE_2,    SE_3, XXXXXXX,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                           KC_SPC, MO(NAV),    _______, KC_LSFT
+                                          MO(NAV),  KC_SPC,    KC_LSFT, _______
                                       //`-----------------'  `-----------------'
   ),
 
@@ -70,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   MO(F_KEYS), XXXXXXX, XXXXXXX, XXXXXXX,DF(PLAY),
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   MO(F_KEYS), XXXXXXX, XXXXXXX, XXXXXXX,DF(GAME),
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                           KC_SPC, _______,    _______, KC_LSFT
+                                          _______,  KC_SPC,    KC_LSFT, _______
                                       //`-----------------'  `-----------------'
   ),
 
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F12,                      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                           KC_SPC, _______,    _______, KC_LSFT
+                                          _______,  KC_SPC,    KC_LSFT, _______
                                       //`-----------------'  `-----------------'
   ),
 
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX,    SE_1,    SE_2,    SE_3,    SE_B,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                           KC_SPC, MO(NAV),    _______, KC_LSFT
+                                          MO(NAV),  KC_SPC,    KC_LSFT, _______
                                       //`-----------------'  `-----------------'
   )
 };
