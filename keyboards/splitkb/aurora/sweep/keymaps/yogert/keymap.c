@@ -3,7 +3,8 @@
 
 
 enum ferris_layers {
-  BASE,
+  QWER, // QWERTY base layout
+  COLE, // Colemak base layout
   GAME, // For gaming
   NUM,
   SYM,
@@ -16,13 +17,24 @@ enum ferris_layers {
 // TODO: See if you can move the gaming layer to the next to last one
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [BASE] = LAYOUT(
+  [QWER] = LAYOUT(
   //,--------------------------------------------.                    ,--------------------------------------------.
          SE_Q,    SE_W,    SE_E,    SE_R,    SE_T,                         SE_Y,    SE_U,    SE_I,    SE_O,    SE_P,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          SE_A,    SE_S,    SE_D,    SE_F,    SE_G,                         SE_H,    SE_J,    SE_K,    SE_L, SE_QUOT,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          SE_Z,    SE_X,    SE_C,    SE_V,    SE_B,                         SE_N,    SE_M, SE_COMM,  SE_DOT, SE_SLSH,
+  //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
+                                          MO(SYM),  KC_SPC,    KC_LSFT, MO(NUM)
+                                      //`-----------------'  `-----------------'
+  ),
+  [COLE] = LAYOUT(
+  //,--------------------------------------------.                    ,--------------------------------------------.
+         SE_Q,    SE_W,    SE_F,    SE_P,    SE_B,                         SE_J,    SE_L,    SE_U,    SE_Y, SE_QUOT,
+  //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
+         SE_A,    SE_R,    SE_S,    SE_T,    SE_G,                         SE_M,    SE_N,    SE_E,    SE_I,    SE_O,
+  //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
+         SE_Z,    SE_X,    SE_C,    SE_D,    SE_V,                         SE_K,    SE_H, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                           MO(SYM),  KC_SPC,    KC_LSFT, MO(NUM)
                                       //`-----------------'  `-----------------'
@@ -34,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
       KC_LCTL,    SE_A,    SE_S,    SE_D,    SE_F,                         SE_H,    SE_J,    SE_K,    SE_L, SE_QUOT,
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
-      KC_LSFT,    SE_Z,    SE_X,    SE_C,    SE_V,                         SE_N,    SE_M, SE_COMM,  SE_DOT,DF(BASE),
+      KC_LSFT,    SE_Z,    SE_X,    SE_C,    SE_V,                         SE_N,    SE_M, SE_COMM,  SE_DOT,DF(QWER),
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                          MO(GNUM),  KC_SPC,    KC_LSFT, MO(GNUM)
                                       //`-----------------'  `-----------------'
@@ -101,12 +113,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+// QWERTY combos
 const uint16_t PROGMEM combo_escape[] = {SE_W, SE_E,    SE_R, COMBO_END};
 const uint16_t PROGMEM combo_enter[]  = {SE_J, SE_K,    SE_L, COMBO_END};
 const uint16_t PROGMEM combo_delete[] = {SE_M, SE_COMM,       COMBO_END};
+// Colemak combos
+const uint16_t PROGMEM combo_colemak_escape[] = {SE_W, SE_F,    SE_P, COMBO_END};
+const uint16_t PROGMEM combo_colemak_enter[]  = {SE_N, SE_E,    SE_I, COMBO_END};
+const uint16_t PROGMEM combo_colemak_delete[] = {SE_H, SE_COMM,       COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(combo_escape,     KC_ESC),
   COMBO(combo_enter,      KC_ENT),
   COMBO(combo_delete,     KC_DEL),
+  COMBO(combo_colemak_escape,     KC_ESC),
+  COMBO(combo_colemak_enter,      KC_ENT),
+  COMBO(combo_colemak_delete,     KC_DEL),
 };
