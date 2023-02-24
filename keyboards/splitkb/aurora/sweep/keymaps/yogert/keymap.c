@@ -44,9 +44,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
       KC_TAB,     SE_Q,    SE_W,    SE_E,    SE_R,                         SE_Y,    SE_U,    SE_I,    SE_O,    SE_P,
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
-      KC_LCTL,    SE_A,    SE_S,    SE_D,    SE_F,                         SE_H,    SE_J,    SE_K,    SE_L, SE_QUOT,
+      KC_LSFT,    SE_A,    SE_S,    SE_D,    SE_F,                         SE_H,    SE_J,    SE_K,    SE_L, SE_QUOT,
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
-      KC_LSFT,    SE_Z,    SE_X,    SE_C,    SE_V,                         SE_N,    SE_M, SE_COMM,  SE_DOT,DF(QWER),
+      KC_LCTL,    SE_Z,    SE_X,    SE_C,    SE_V,                         SE_N,    SE_M, SE_COMM,  SE_DOT,DF(QWER),
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                          MO(GNUM),  KC_SPC,    KC_LSFT, MO(GNUM)
                                       //`-----------------'  `-----------------'
