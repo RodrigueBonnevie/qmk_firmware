@@ -108,13 +108,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-
-const uint16_t PROGMEM combo_escape[] = {SE_W, SE_E,    SE_R, COMBO_END};
-const uint16_t PROGMEM combo_enter[]  = {SE_J, SE_K,    SE_L, COMBO_END};
-const uint16_t PROGMEM combo_delete[] = {SE_M, SE_COMM,       COMBO_END};
+// combos on qwerty
+const uint16_t PROGMEM combo_qwerty_escape[] = {SE_W, SE_E,    SE_R, COMBO_END};
+const uint16_t PROGMEM combo_qwerty_enter[]  = {SE_J, SE_K,    SE_L, COMBO_END};
+const uint16_t PROGMEM combo_qwerty_delete[] = {SE_M, SE_COMM,       COMBO_END};
+// combos on colemak
+const uint16_t PROGMEM combo_colemak_escape[] = {SE_W, SE_F,    SE_P, COMBO_END};
+const uint16_t PROGMEM combo_colemak_enter[]  = {SE_N, SE_E,    SE_I, COMBO_END};
+const uint16_t PROGMEM combo_colemak_delete[] = {SE_H, SE_COMM,       COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  COMBO(combo_escape,     KC_ESC),
-  COMBO(combo_enter,      KC_ENT),
-  COMBO(combo_delete,     KC_DEL),
+  COMBO(combo_qwerty_escape,     KC_ESC),
+  COMBO(combo_qwerty_enter,      KC_ENT),
+  COMBO(combo_qwerty_delete,     KC_DEL),
+  COMBO(combo_colemak_escape,     KC_ESC),
+  COMBO(combo_colemak_enter,      KC_ENT),
+  COMBO(combo_colemak_delete,     KC_DEL),
 };
