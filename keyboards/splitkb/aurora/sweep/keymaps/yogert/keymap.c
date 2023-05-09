@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
       KC_LSFT,    SE_A,    SE_S,    SE_D,    SE_F,                         SE_H,    SE_J,    SE_K,    SE_L, SE_QUOT,
   //|--------+--------+--------+--------+--------+                    |--------+--------+--------+--------+--------|
-      KC_LCTL,    SE_Z,    SE_X,    SE_C,    SE_V,                         SE_N,    SE_M, SE_COMM,  SE_DOT,DF(QWER),
+      KC_LCTL,    SE_Z,    SE_X,    SE_C,    SE_V,                         SE_N,    SE_M, SE_COMM,  SE_DOT,DF(COLE),
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
                                          MO(GNUM),  KC_SPC,    KC_LSFT, MO(GNUM)
                                       //`-----------------'  `-----------------'
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-------------------------------------------.                     ,--------------------------------------------.
       SE_EXLM,   SE_AT, SE_HASH,  SE_DLR, SE_PERC,                      SE_CIRC, SE_AMPR, SE_DQUO, SE_PIPE, SE_BSLS,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      KC_LGUI, KC_LCTL, KC_LALT,  KC_TAB, KC_LSFT,                      SE_MINS, SE_LPRN, SE_LCBR, SE_LBRC, SE_LABK,
+      KC_ESC,  KC_LCTL, KC_LALT,  KC_TAB, KC_LGUI,                      SE_MINS, SE_LPRN, SE_LCBR, SE_LBRC, SE_LABK,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+---------+-------|
       XXXXXXX, XXXXXXX, XXXXXXX, SE_QUES, SE_TILD,                      SE_UNDS, SE_RPRN, SE_RCBR, SE_RBRC, SE_RABK,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
       XXXXXXX,    SE_7,    SE_8,    SE_9, SE_PLUS,                      XXXXXXX, SE_ARNG, SE_ADIA, SE_ODIA, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LSFT, KC_BSPC, KC_LALT, KC_LCTL, KC_LGUI,
+         SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LGUI, KC_BSPC, KC_LALT, KC_LCTL,  KC_DEL,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX,    SE_1,    SE_2,    SE_3, XXXXXXX,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
       KC_RGUI, KC_RCTL, KC_RALT,  KC_TAB, KC_RSFT,                      KC_RSFT,  KC_TAB, KC_RALT, KC_RCTL, KC_RGUI,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX,LALT(KC_F4),XXXXXXX,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT,MO(F_KEYS),
+      XXXXXXX, XXXXXXX, XXXXXXX,LALT(KC_F4),XXXXXXX,                    KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT,MO(F_KEYS),
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX,DF(QWER),DF(COLE),DF(GAME),
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -103,13 +103,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [GNUM] = LAYOUT(  // Modified number layer for when gaming
   //,--------------------------------------------.                    ,--------------------------------------------.
-      XXXXXXX,    SE_7,    SE_8,    SE_9,    SE_T,                      XXXXXXX, SE_ARNG, SE_ADIA, SE_ODIA, XXXXXXX,
+       KC_ESC,    SE_7,    SE_8,    SE_9,    SE_T,                      XXXXXXX, SE_ARNG, SE_ADIA, SE_ODIA, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          SE_0,    SE_4,    SE_5,    SE_6,    SE_G,                      KC_LSFT, KC_BSPC, KC_LALT, KC_LCTL, KC_LGUI,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX,    SE_1,    SE_2,    SE_3,    SE_B,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                          MO(NAV),  KC_SPC,    KC_LSFT, _______
+                                          _______,  KC_SPC,    KC_LSFT, XXXXXXX
                                       //`-----------------'  `-----------------'
   )
 };
