@@ -14,8 +14,6 @@ enum ferris_layers {
 };
 
 
-// TODO: See if you can move the gaming layer to the next to last one
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [COLE] = LAYOUT(
   //,--------------------------------------------.                    ,--------------------------------------------.
@@ -25,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          SE_Z,    SE_X,    SE_C,    SE_D,    SE_V,                         SE_K,    SE_H, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                          MO(SYM),  KC_SPC,    KC_LSFT, MO(NUM)
+                                          MO(SYM),  KC_SPC,    SFT_T(KC_BSPC), MO(NUM)
                                       //`-----------------'  `-----------------'
   ),
 
@@ -37,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
          SE_Z,    SE_X,    SE_C,    SE_V,    SE_B,                         SE_N,    SE_M, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
-                                          MO(SYM),  KC_SPC,    KC_LSFT, MO(NUM)
+                                          MO(SYM),  KC_SPC,    SFT_T(KC_BSPC), MO(NUM)
                                       //`-----------------'  `-----------------'
   ),
   
@@ -69,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
       XXXXXXX,    SE_7,    SE_8,    SE_9, SE_PLUS,                      XXXXXXX, SE_ARNG, SE_ADIA, SE_ODIA, XXXXXXX,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-         SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LGUI, KC_BSPC, KC_LALT, KC_LCTL,  KC_DEL,
+         SE_0,    SE_4,    SE_5,    SE_6,  SE_EQL,                      KC_LGUI, XXXXXXX, KC_LALT, KC_LCTL,  KC_DEL,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX,    SE_1,    SE_2,    SE_3, XXXXXXX,                      XXXXXXX, XXXXXXX, SE_COMM,  SE_DOT, SE_SLSH,
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -115,21 +113,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 // QWERTY combos
-const uint16_t PROGMEM combo_escape[] = {SE_W, SE_E,    SE_R, COMBO_END};
 const uint16_t PROGMEM combo_enter[]  = {SE_J, SE_K,    SE_L, COMBO_END};
-const uint16_t PROGMEM combo_delete[] = {SE_M, SE_COMM,       COMBO_END};
 // Colemak combos
-const uint16_t PROGMEM combo_colemak_escape[] =         {SE_W, SE_F,    SE_P,   COMBO_END};
 const uint16_t PROGMEM combo_colemak_enter[]  =         {SE_N, SE_E,    SE_I,   COMBO_END};
 const uint16_t PROGMEM combo_colemak_ctrl_backspace[] = {SE_H, SE_COMM,         COMBO_END};
-const uint16_t PROGMEM combo_colemak_delete[] =         {SE_H, SE_COMM, SE_DOT, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  COMBO(combo_escape,     KC_ESC),
   COMBO(combo_enter,      KC_ENT),
-  COMBO(combo_delete,     KC_DEL),
-  COMBO(combo_colemak_escape,         KC_ESC),
   COMBO(combo_colemak_enter,          KC_ENT),
   COMBO(combo_colemak_ctrl_backspace, LCTL(KC_BSPC)),
-  COMBO(combo_colemak_delete,         KC_DEL) 
 };
