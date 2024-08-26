@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,--------------------------------------------.                    ,--------------------------------------------.
       KC_RGUI, KC_RCTL, KC_RALT,  KC_TAB, KC_RSFT,                      KC_RSFT,  KC_TAB, KC_RALT, KC_RCTL, KC_RGUI,
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX,LALT(KC_F4),XXXXXXX,                    KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT,MO(F_KEYS),
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,MO(F_KEYS),
   //|--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX,DF(QWER),DF(COLE),DF(GAME),
   //|--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------|
@@ -113,13 +113,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 // QWERTY combos
-const uint16_t PROGMEM combo_enter[]  = {SE_J, SE_K,    SE_L, COMBO_END};
+const uint16_t PROGMEM combo_enter[]  = {SE_J, SE_K, SE_L, COMBO_END};
 // Colemak combos
-const uint16_t PROGMEM combo_colemak_enter[]  =         {SE_N, SE_E,    SE_I,   COMBO_END};
-const uint16_t PROGMEM combo_colemak_ctrl_backspace[] = {SE_H, SE_COMM,         COMBO_END};
+const uint16_t PROGMEM combo_colemak_enter[]          = {SE_N, SE_E,    SE_I,   COMBO_END};
+const uint16_t PROGMEM combo_colemak_backspace[]      = {SE_H, SE_COMM,         COMBO_END};
+const uint16_t PROGMEM combo_colemak_ctrl_backspace[] = {SE_H, SE_COMM, SE_DOT, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-  COMBO(combo_enter,      KC_ENT),
+  COMBO(combo_enter,                  KC_ENT),
   COMBO(combo_colemak_enter,          KC_ENT),
+  COMBO(combo_colemak_backspace,      KC_BSPC),
   COMBO(combo_colemak_ctrl_backspace, LCTL(KC_BSPC)),
 };
